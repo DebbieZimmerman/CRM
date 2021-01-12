@@ -12,21 +12,26 @@ USE sql_crm;
 
 -- CREATE TABLE email_type (
 --     id INT AUTO_INCREMENT PRIMARY KEY,
---     email_type VARCHAR(1)
+--     email_type VARCHAR(4)
 -- );
 
--- CREATE TABLE client (
---     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
---     first VARCHAR(20),
---     last VARCHAR(30),
---     email VARCHAR(50),
---     sold BOOLEAN,
---     date VARCHAR(50),
---     email_type_id INT,
---     owner_id INT,
---     country_id INT,
+CREATE TABLE client (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    first VARCHAR(20),
+    last VARCHAR(30),
+    email VARCHAR(50),
+    sold BOOLEAN,
+    date VARCHAR(50),
+    email_type_id INT,
+    owner_id INT,
+    country_id INT,
 
---     FOREIGN KEY(email_type_id) REFERENCES email_type(id),
---     FOREIGN KEY(owner_id) REFERENCES owner(id),
---     FOREIGN KEY(country_id) REFERENCES country(id)
--- );
+    FOREIGN KEY(email_type_id) REFERENCES email_type(id),
+    FOREIGN KEY(owner_id) REFERENCES owner(id),
+    FOREIGN KEY(country_id) REFERENCES country(id)
+);
+
+-- INSERT INTO email_type VALUES (null, null)
+-- DROP TABLE owner;
+-- DROP TABLE client;
+-- DROP TABLE email_type;

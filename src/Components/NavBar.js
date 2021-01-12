@@ -10,7 +10,7 @@ export default function NavBar() {
     {title: "Actions", link: "/actions"},
     {title: "Analytics", link: "/analytics"}
   ]
-  console.log(navItems)
+
   return (
     <div className="">
       <AppBar position="static">
